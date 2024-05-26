@@ -1,0 +1,153 @@
+site_name: kubenet
+nav:
+  - Home: index.md
+  - Getting Started: 
+    - Getting started: 01-getting-started/01_install.md
+    - Prerequisites: 01-getting-started/02_prereq.md
+  - Examples/Tutorials:
+    - About: 02-examples/01_about.md
+  - Community: 
+    - Community: 07-community/01_about.md
+    - FAQ: 07-community/02_faq.md
+
+site_author: Wim Henderickx
+site_description: >-
+  Kubenet is a community initiative to help network automation engineers understand kubernetes
+# repository
+repo_name: kubenet-dev/docs
+repo_url: https://github.com/kubenet-dev/docs
+site_url: "https://learn.kubenet.dev"
+theme:
+  name: material
+  custom_dir: docs/overrides
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  language: en
+  features:
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.expand
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs.sticky
+    - search.suggest
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.action.edit
+    - content.tooltips
+    #- header.autohide
+    #- search.highlight
+    #- search.share
+    #- search.suggest
+    #- toc.integrate
+    - toc.follow
+    
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Manrope
+    code: Fira Mono
+  icon:
+    logo: fontawesome/solid/sitemap
+    repo: fontawesome/brands/github
+    edit: material/file-edit-outline
+  favicon: images/flask.svg
+
+# Plugins
+plugins:
+  - search
+  - mermaid2
+  - minify:
+      minify_html: true
+  
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sdcio
+    # - icon: fontawesome/brands/discord
+    #   link: https://discord.gg/fHCNahWR2T
+    
+extra_css:
+  - stylesheets/extra.css
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.attr_list
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - md_in_html
+  - toc:
+      permalink: "#"
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      line_spans: __span
+      anchor_linenums: true
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: kubenet
+      repo: docs
+  - pymdownx.mark
+  - pymdownx.smartsymbols:
+      fractions: false
+  - pymdownx.snippets:
+      check_paths: true
+      #dedent_subsections: true
+      base_path:
+        - ./
+      url_download: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.blocks.tab:
+      alternate_style: true
+  - pymdownx.blocks.admonition
+  - pymdownx.blocks.definition
+  - pymdownx.blocks.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
