@@ -290,7 +290,7 @@ pkg-system           pkg-server-5444f74b69-px88b                     1/1     Run
 
 Hoera, the kubenet components are running. 🥳
 
-Up to the next exercise [discover devices](../02-examples/02_sdc.md). Lets connect to the [srlinux][srlinux] devices, that were deployed by [containerlab][containerlab]
+Up to the next exercise [discover devices](../02-examples/02_discovery.md). Lets connect to the [srlinux][srlinux] devices, that were deployed by [containerlab][containerlab]
 
 [containerlab]: https://containerlab.dev
 [kind]: https://kind.sigs.k8s.io
