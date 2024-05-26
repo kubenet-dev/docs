@@ -6,9 +6,16 @@ nav:
     - Prerequisites: 01-getting-started/02_prereq.md
   - Examples/Tutorials:
     - About: 02-examples/01_about.md
+    - Discovery: 02-examples/02_discovery.md
+    - Inventory: 02-examples/03_inventory.md
+    - Network Config: 02-examples/04_networkconfig.md
+    - Default Network: 02-examples/05_defaultnetwork.md
+    - Bridged Network: 02-examples/06_bridgednetwork.md
+    - Routed Network: 02-examples/07_routednetwork.md
+    - IRB Network: 02-examples/08_irbnetwork.md
+    - GitOps: 02-examples/09_gitops.md
   - Community: 
-    - Community: 07-community/01_about.md
-    - FAQ: 07-community/02_faq.md
+    - Community: 03-community/01_about.md
 
 site_author: Wim Henderickx
 site_description: >-
