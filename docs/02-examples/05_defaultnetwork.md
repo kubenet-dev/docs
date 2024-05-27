@@ -1,6 +1,6 @@
 # Default Network
 
-The default network is acting as the underlay, the network that interconnects all the devices. Looking at the configuration it looks really slim. The reason is that this leverages the parameters setup in the previous step.
+In this exercise we create the default network. The default network is your underlay network configuration, the network that interconnects all the devices. Looking at the configuration it looks really slim. The reason is that this leverages the parameters setup in the previous step [network config][network config].
 
 /// details | Default Network
 
@@ -13,7 +13,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/network/default-net
 
 Execute the following command to instantiate the default network
 
-/// tab | interactive
+/// tab | Interactive
 
 kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
 
@@ -23,7 +23,7 @@ kubenetctl networkdefault
 
 ///
 
-/// tab | automatic
+/// tab | Automatic
 
 When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
 
@@ -43,9 +43,13 @@ Configue the default underlay network
 network.network.app.kuid.dev/topo3nodesrl.default created
 ```
 
-While this looks really simple, a lot is happening under the hood. This default network is leveraging the network config setup in the previous step and allocates AS per device for the underlay, It allocate a prefix for each link in the network per address family and its individual enpoints, etc. On top a device config is derived thorugh an abstract data model, which is mapped to [srlinux][srlinux] for the specific implementation of the device and once dome, this is transacted to the device using [sdc][sdc].
+While this looks really simple, a lot is happening under the hood. This default network is leveraging the network config setup in the previous step and allocates AS per device for the underlay, It allocate a IP prefix for each link in the network per address family and a IP address for its individual enpoints, etc. On top a device config is derived thorugh an abstract data model, which is mapped to [srlinux][srlinux] for the specific implementation of the device. Once the device configuration is available for all the devices, the configurations are transacted to the device using [sdc][sdc].
 
-An AS number per device is allocated
+!!!note "In a later exercise (gitops) you will see that another option is to check in the resulting device configurations in git, rather than transacting to the network".
+
+Lets go through some resources that got allocated through these steps.
+
+First an AS number per device is allocated, through the ASClaim API.
 
 ```
 kubectl get asclaims.as.be.kuid.dev 
@@ -60,7 +64,7 @@ topo3nodesrl.default.edge02   True    topo3nodesrl.default   dynamicID          
 topo3nodesrl.default.ibgp     True    topo3nodesrl.default   staticID    65535         65535
 ```
 
-A Set of IP claims are created for the respective loopbacks and inter-subnet links.
+A Set of IP claims are created for the respective loopbacks and inter-subnet links using the IPClaim API.
 
 ```
 kubectl get ipclaims.ipam.be.kuid.dev 
@@ -92,7 +96,7 @@ topo3nodesrl.default.edge02.ipv4                     True    topo3nodesrl.defaul
 topo3nodesrl.default.edge02.ipv6                     True    topo3nodesrl.default   dynamicAddress   pool                        1000::/128    
 ```
 
-The abstracted device models
+The abstracted device models derived from the network config for each device in the topology.
 
 ```
 kubectl get networkdevices.network.app.kuid.dev
@@ -105,7 +109,7 @@ topo3nodesrl.default.edge01   True    srlinux.nokia.com
 topo3nodesrl.default.edge02   True    srlinux.nokia.com
 ```
 
-The configuration send to the device.
+These are the final device specific configurations that were send to the device.
 
 ```
 kubectl get configs.config.sdcio.dev 
@@ -223,6 +227,14 @@ Summary:
 
 ```
 
+You can also see the resulting configuration using kubectl using the following command.
+
+```
+kubectl get runningconfigs.config.sdcio.dev core01 -o yaml
+kubectl get runningconfigs.config.sdcio.dev edge01 -o yaml
+kubectl get runningconfigs.config.sdcio.dev edge02 -o yaml
+```
+
 Lets see how we can do the same for overlays
 
 ///
@@ -235,3 +247,4 @@ Lets see how we can do the same for overlays
 [srlinux]: https://learn.srlinux.dev/
 [gnmi]: https://github.com/openconfig/gnmi
 [netconf]: https://en.wikipedia.org/wiki/NETCONF
+[network config]: https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/network/default-networkconfig.yaml

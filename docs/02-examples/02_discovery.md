@@ -3,7 +3,7 @@
 This exercise will focus on network device discovery. We will discover the deployed network devices that were deployed using [containerlab][containerlab] in the installation section.
 
 
-Given [sdc][sdc] is build to support multiple vendors, the first thing we need to do is load the YANG schema for the respective vendor and release. In this exercise we use [gNMI][gnmic], while netconf is also supported.
+Given [sdc][sdc] is build to support multiple vendors, the first thing we need to do is load the YANG schema for the respective vendor and release. In this exercise we use [gNMI][gnmi], but netconf could also be used.
 
 /// details | Schema
 
@@ -16,11 +16,19 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/sdc/schemas/srl24-3
 
 After the schema is configured we create a set of profiles that [sdc][sdc] uses to connect and sync the configurations from the devices. Also the credentials, using secrets are setup for the respectve device.
 
-/// details | Profiles
+/// details | Connection Profile
 
 ```yaml
 --8<--
 https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/sdc/profiles/conn-gnmi-skipverify.yaml
+--8<--
+```
+///
+
+/// details | Sync Profile
+
+```yaml
+--8<--
 https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/sdc/profiles/sync-gnmi-get.yaml
 --8<--
 ```
@@ -38,7 +46,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/sdc/drrules/dr-dyna
 
 ///
 
-/// tab | interactive
+/// tab | Interactive
 
 kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
 
@@ -48,7 +56,7 @@ kubenetctl sdc
 
 ///
 
-/// tab | automatic
+/// tab | Automatic
 
 When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
 
@@ -101,6 +109,14 @@ core01   True             srl.nokia.sdcio.dev   172.21.0.3:57400   7220 IXR-D3  
 edge01   True             srl.nokia.sdcio.dev   172.21.0.4:57400   7220 IXR-D2   Sim Serial No.   1A:16:03:FF:00:00
 edge02   True             srl.nokia.sdcio.dev   172.21.0.5:57400   7220 IXR-D2   Sim Serial No.   1A:1D:04:FF:00:00
 ```
+
+The following command allows to see the running config of the respective devices.
+
+```
+kubectl get runningconfigs.config.sdcio.dev core01 -o yaml
+```
+
+E.g. if you want to backup the config of your devices this command allows you to pull the configuration and back them up in your preferred backup system.
 
 Lets configure the network devices such that we can exchange routes and validate the configuration.
 

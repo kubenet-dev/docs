@@ -13,7 +13,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/network/vpc2-routed
 
 Execute the following command to instantiate the routed network
 
-/// tab | interactive
+/// tab | Interactive
 
 kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
 
@@ -23,7 +23,7 @@ kubenetctl networkrouted
 
 ///
 
-/// tab | automatic
+/// tab | Automatic
 
 When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
 
@@ -43,9 +43,9 @@ Configue a routed overlay EVPN network
 network.network.app.kuid.dev/topo3nodesrl.vpc2 created
 ```
 
-An abstract data model is derived per device for this confiuration, which is translated to the specific implementation of [srlinux][srlinux] and finally transacted to the device. Important to note that only Edge01 and edge01 has a configuration, since these devices are only used for this specific configuration. The topology information is used to determine this.
+An abstract data model is derived per device for this confiuration, which is translated to the specific implementation of [srlinux][srlinux] and finally transacted to the device. Important to note that only edge01 and edge02 has a configuration, since these devices are only used for this specific configuration. The topology information is used to determine this.
 
-The abstracted device models
+The abstracted device models can be viewed with this command.
 
 ```
 kubectl get networkdevices.network.app.kuid.dev
@@ -62,7 +62,7 @@ topo3nodesrl.vpc2.edge01      True    srlinux.nokia.com
 topo3nodesrl.vpc2.edge02      True    srlinux.nokia.com
 ```
 
-The configuration send to the device.
+The configuration send to the device can be seen through this command.
 
 ```
 kubectl get configs.config.sdcio.dev 
@@ -113,7 +113,14 @@ A:edge02# show network-instance summary
 --{ + running }--[  ]--
 ```
 
-Nice, a single API for both routed and bridged, can we combine routed and bridged in the same network ? Yes we can see next exercise
+You can also see the resulting configuration using kubectl using the following command.
+
+```
+kubectl get runningconfigs.config.sdcio.dev edge01 -o yaml
+kubectl get runningconfigs.config.sdcio.dev edge02 -o yaml
+```
+
+Nice, a single API for either routed or bridged, can we combine routed and bridged in the same network ? Yes we can see next exercise
 
 ///
 

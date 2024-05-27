@@ -1,34 +1,35 @@
-# Gitops
+# GitOps
 
-So far wee have seen that the configurations that are derived are directly send to the device, however many people have expressed the need to validate and check the derived configurations before they can be applied to the network. This is where the package server comes in.
+So far we have seen that the device configurations that are derived from the network configs are directly transacted to the respective devices. However many people have expressed the need to validate and check the derived configurations before they can be applied to the network. This is where the package server comes in.
 
-The philiosphy is like this we have a set of catalog configuration people use to configure network constructs. Lets use the overlay's as an example. We have a system (git) in which these blueprints are maintained and we want to instantiate them to the network using the flow that we saw in the previous exercises. However there is 1 big difference, rather than sending the device specific config to the device, we want to check them in into git and someone ( a human or a ci system will validated them before they get applied). if this workflow interests you this is an exercise you would be interested in.
+The philiosphy in this exercise is like this. We have a set of catalog (templates) configuration people use to configure network constructs. Lets use the overlay's as an example. We have a system (git) in which these blueprints are maintained and we want to instantiate them to the network using the flow that we saw in the previous exercises. However there is 1 big difference, rather than transacting the specific device config directly, we want to check them in into git and someone ( a human or a ci system can validate them before they get applied to the network). If this workflow is relevant for you, this is an exercise you shoudl execute.
 
-First we register the repository in which the blueprints are maintained
+First we register the repository in which the blueprints are maintained. This repo is public and uses a bridged network blueprint.
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubenet-dev/kubenet/main/pkg/repo/repo-catalog.yaml
 ```
 
+After the repo is registered, the package server discovers the blueprint package from git. You can see the result using the following comman.
+
 ```
 kubectl get packagerevisions.pkg.pkgserver.dev 
 ```
 
-We discover the blueprint package
+We discovered the blueprint package and we can access it using the kubernetes API.
 
 ```
 NAME                                     READY   REPOSITORY     TARGET    REALM     PACKAGE   REVISION   WORKSPACE   LIFECYCLE
 catalog.repo-catalog.network.bridge.v1   True    repo-catalog   catalog   network   bridge    v1         v1          published
 ```
 
-you could look at the content like this
+You could also look at the content, like this
 
 ```
 kubectl describe packagerevisionresourceses.pkg.pkgserver.dev catalog.repo-catalog.network.bridge.v1 
 ```
 
 ```
-
 Name:         catalog.repo-catalog.network.bridge.v1
 Namespace:    default
 Labels:       <none>
@@ -95,25 +96,56 @@ Status:
 Events:  <none>
 ```
 
-You also need a second repo with credentials since we will need write access to update the git info
+To continue with this exercise you should now setup your own repository, which is used to store the derived device specific configuration. We need to provide write access to the package server. As such you should setup 2 things.
+
+1. A git repository
+2. A token to access the git repository 
+
+I am using my own git repo to show the exercise, but this repo should be replaced with your own. [Here][pkgserver-repo] is some detail how this can be achieved.
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubenet-dev/kubenet/main/pkg/repo/repo-target.yaml
 ```
 
-
-kubectl apply -f https://raw.githubusercontent.com/kubenet-dev/kubenet/main/pkg/pvar/pvar-bridge.yaml
+After this repo is registered the following show the respective information
 
 ```
-henderiw@playground:~/test/kubenet$ k get packagerevisions.pkg.pkgserver.dev 
+kubectl get repositories.config.pkg.pkgserver.dev
+```
+
+```
+NAME           READY   DEPLOYMENT   TYPE   ADDRESS
+repo-catalog   True                 git    https://github.com/kubenet-dev/examples.git
+repo-target    True    true         git    https://github.com/kubenet-dev/demo.git
+```
+
+Once this is configured, lets install the blueprint. This can be done using the package variant resource/API.
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubenet-dev/kubenet/main/pkg/pvar/pvar-bridge.yaml
+```
+
+A packagevariant is a way to instantiate a variant of the package revision. The package variant has an upstream reference (blueprint) and a downstream reference (the repo in which the final device configurations will be stored). On top you could also supply input variant information to customize the specific parameters for the environment. We dont use this in this excersize, but no we hope you understand where the name is coming from (Creating a variant of a blueprint package with specific parameters).
+
+Once the package variant is instantiated a new package revision is created in the downstream repo (the repo you created) with LifecycleStatus = Draft.
+
+```
+kubectl get packagerevisions.pkg.pkgserver.dev 
+```
+
+```
 NAME                                                          READY   REPOSITORY     TARGET         REALM     PACKAGE   REVISION   WORKSPACE             LIFECYCLE
 catalog.repo-catalog.network.bridge.v1                        True    repo-catalog   catalog        network   bridge    v1         v1                    published
 topo3nodesrl.repo-target.network.bridge.pv-077eb8d077b36655   True    repo-target    topo3nodesrl   network   bridge               pv-077eb8d077b36655   draft
 ```
 
+Once the pipeline completes you should see the resulting configuration in the package revision with the final device configuration derived from the blueprint content you instantiated through the package variant.
 
 ```
-henderiw@playground:~/test/kubenet$ k describe packagerevisionresourceses.pkg.pkgserver.dev topo3nodesrl.repo-target.network.bridge.pv-077eb8d077b36655 
+kubectl describe packagerevisionresourceses.pkg.pkgserver.dev topo3nodesrl.repo-target.network.bridge.pv-077eb8d077b36655 
+```
+
+```
 Name:         topo3nodesrl.repo-target.network.bridge.pv-077eb8d077b36655
 Namespace:    default
 Labels:       <none>
@@ -308,3 +340,7 @@ status: {}
 Status:
 Events:  <none>
 ```
+
+Awesome, we hope you enjoyed and thanks for completing these exercises. If you have other ideas, suggestion or want to discuss this further join us [here]((https://discord.gg/Ed48vZcy))
+
+[pkgserver-repo]: https://docs.pkgserver.dev/03-userguide/03_register_deployment_repo/

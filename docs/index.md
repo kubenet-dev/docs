@@ -2,19 +2,17 @@
 hide:
   - navigation
 ---
-<p align=center><object type="image/svg+xml" data=https://cdn.jsdelivr.net/gh/kubenet-dev/docs@main/docs/images/kubenet_logo_final.svg ></object></p>
+<p align=center><object type="image/svg+xml" data=https://cdn.jsdelivr.net/gh/kubenet-dev/docs@main/docs/images/kubenet_logo_final.svg width="200p" height="200p" background="white"></object></p>
 
 [![Discord](https://img.shields.io/discord/860500297297821756?style=flat-square&label=discord&logo=discord&color=00c9ff&labelColor=bec8d2)](https://discord.gg/Ed48vZcy)
 
-Welcome to `kubenet`, a community based approach to help network engineers better understand the potential of `kubernetes` for network automation. While we discuss networking, we are not talking about CNI(s) here, but about using `kubernetes` as an automation engine to manage physical, virtual or containerized NOS(s).
-
-The environment is build such that can leverage multiple vendors. We use [srlinux][srlinux] for now as this is open to use, but we would welcome other vendors contributions.
+Welcome to `kubenet`, a community based approach to help network engineers better understand the potential of `kubernetes` for network automation. While we discuss networking, we are NOT talking about CNI(s) here, but about using `kubernetes` as an automation/orchestration engine to manage physical, virtual or containerized NOS(s).
 
 If you are interested to learn and discuss [join us](https://discord.gg/Ed48vZcy)
 
 ## Why
 
-Kubernetes stands out as the most extensive and robust automation and orchestration system available today, already leveraged across many industries. The question to ask here is why is the networking industry not leveraging kubernetes for network automation. This community is setup to help understand the potential of kubernetes for network automation.
+Kubernetes stands out as the most extensive and robust automation and orchestration system available today. Originally focussed on container orchestration but leveraged across many industries, beyond container orchestration. The question to ask here is why is the networking industry not leveraging kubernetes for network automation. The Kubenet community is setup with to goal to help understand networking engineers the potential of kubernetes for network automation.
 
 Here are some attributes to consider why kubernetes is a good automation platform:
 

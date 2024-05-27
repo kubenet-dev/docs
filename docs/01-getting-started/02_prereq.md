@@ -1,5 +1,13 @@
 # Prerequisites
 
+## CPU architecture
+
+All the kubernetes components run on both AMD and ARM based CPU, but most network OS(es) are not supported on ARM based CPU(s). As a result use an AMD based CPU to run the exercises.
+
+## Operating system
+
+We tested on WSL for windows and Linux and darwin OS.
+
 ## kubectl
 
 Install [kubectl][kubectl]
@@ -25,7 +33,12 @@ complete -F _start_kubectl k
 
 ## kubenetctl
 
-kubenetctl is a single binary built for linux and Mac OS, distributed via [ghreleases][ghreleases] focussed to help run through the kubenet exercises.
+kubenetctl is a single binary built for linux and Mac OS, distributed via [ghreleases][ghreleases] focussed to help run through the kubenet exercises. 
+
+!!!note "By default it runs in interactive mode, where you need to press enter between all steps. The -a option runs the step automatically while still printing what each step does"
+
+
+!!!note "The --shell option allows to change the shell used to execute the commands, by default it uses bash. If you wan to use another shell use --shell zsh e.g"
 
 /// tab | linux/Mac OS
 

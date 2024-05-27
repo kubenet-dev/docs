@@ -1,8 +1,14 @@
 # Inventory
 
-Before configuring the devices with IP, VLAN, BGP, EVPN constructs we need to understand the topology these devices use. In this exercise we opted for an approach to import the inventory we used in the [containerlab][containerlab] setup. The idea is to show we can leverage a discovery approach or a provisioning approach and have them interwork together.
+In this exercise, we will focus on inventory and identifiers for network automation, commonly referred to as a source of truth. The goal is to demonstrate how we can leverage the extendability and flexibility of Kubernetes, which allows customization of the API and the development of applications that utilize this API to build various constructs for different use cases.
 
-First we create the device models for the [srlinux][srlinux] devices we use in our environment. We try to show here how one could leverage a device profile for a specific role in the network and the specific device configuration that is used. For various roles in the network, different profiles could be used. This configuration is used as a source of truth, but also show how a multi-vendor environment and customizations could be done for different vendors and roles in the deployment.
+Before configuring devices with IP, VLAN, BGP, and EVPN constructs, it is crucial to understand the topology these devices utilize. In this exercise, we have chosen to import the inventory used in the [containerlab][containerlab] setup. This approach highlights how discovery and provisioning methods can be leveraged and interworked together.
+
+First, we create the device models for the [srlinux][srlinux] devices used in our environment. This exercise demonstrates how to use a device profile for a specific role in the network and the corresponding device configuration. Different profiles can be applied for various network roles, with this configuration serving as the source of truth. It also shows how to handle a multi-vendor environment and customize configurations for different vendors and roles in the deployment.
+
+!!!note "This capability is enabled using [kuidapps][kuid], such as the Nokia-specific kuid app in this case. However, a specific vendor app can be installed for other vendors. In this exercise, we opted for a specific srlinux API (srl.nokia.app.kuid.dev/v1alpha1), but a vendor-agnostic API could also be used."
+
+We used this approach because [containerlab][containerlab] will only connect and configure the interfaces used in the lab, but the automation might want to use other interfaces the device supports. You could also add specific information to each interface e.g. whether this interface is used for client/customer connectivity, etc
 
 /// details | Specific vendor device model
 
@@ -14,7 +20,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/inventory/srl/ixrd3
 ```
 ///
 
-Afterwards we import the containerlab topology, which is used to populate the inventory in [kuid][kuid].
+Afterwards you import the containerlab topology, which is used to populate the inventory in [kuid][kuid].
 
 /// details | Topology
 
@@ -27,7 +33,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/topo/3node-topology
 
 Execute the following command
 
-/// tab | interactive
+/// tab | Interactive
 
 kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
 
@@ -37,7 +43,7 @@ kubenetctl inventory
 
 ///
 
-/// tab | automatic
+/// tab | Automatic
 
 When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
 
@@ -100,7 +106,7 @@ And Lastly the endpoints
 kubectl get endpoints.infra.be.kuid.dev 
 ```
 
-Dont mind the False ready condition in the endpoint. No k8s controller is acting on this and hence the status is False
+!!!note "Dont mind the False ready condition in the endpoint. No k8s controller is acting on this and hence the status is False"
 
 ```
 NAME                                      READY   TOPOLOGY       REGION    SITE    NODE

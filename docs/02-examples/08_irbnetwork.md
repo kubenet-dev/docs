@@ -1,6 +1,6 @@
 # IRB Overlay Network
 
-In this exercise we configure a irb overlay network using EVPN. The same principle apply here. The default network config is used to simplify the configuration for the end user as much as possible. Also not that the same API can be used to configure both routed and bridged instances.
+In this exercise we configure a irb overlay network using EVPN. The same principle apply here. The default network config is used to simplify the configuration for the end user as much as possible. Also note that the same API can be used to configure both routed and/or bridged instances.
 
 /// details | IRB Network
 
@@ -13,7 +13,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/network/vpc3-irb-ne
 
 Execute the following command to instantiate the routed network
 
-/// tab | interactive
+/// tab | Interactive
 
 kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
 
@@ -23,7 +23,7 @@ kubenetctl networkirb
 
 ///
 
-/// tab | automatic
+/// tab | Automatic
 
 When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
 
@@ -45,7 +45,7 @@ network.network.app.kuid.dev/topo3nodesrl.vpc3 created
 
 An abstract data model is derived per device for this confiuration, which is translated to the specific implementation of [srlinux][srlinux] and finally transacted to the device. Important to note that only Edge01 and edge01 has a configuration, since these devices are only used for this specific configuration. The topology information is used to determine this.
 
-The abstracted device models
+The abstracted device models can be viewed with this command.
 
 ```
 kubectl get networkdevices.network.app.kuid.dev
@@ -64,7 +64,7 @@ topo3nodesrl.vpc3.edge01      True    srlinux.nokia.com
 topo3nodesrl.vpc3.edge02      True    srlinux.nokia.com
 ```
 
-The configuration send to the device.
+The configuration send to the device can be seen through this command.
 
 ```
 kubectl get configs.config.sdcio.dev 
@@ -120,7 +120,14 @@ A:edge02# show network-instance summary
 --{ + running }--[  ]--
 ```
 
-Nice, a single API for both routed and bridged !!
+You can also see the resulting configuration using kubectl using the following command.
+
+```
+kubectl get runningconfigs.config.sdcio.dev edge01 -o yaml
+kubectl get runningconfigs.config.sdcio.dev edge02 -o yaml
+```
+
+Nice, a single API for both routed and/or bridged !! Lets explore gitops.
 
 ///
 

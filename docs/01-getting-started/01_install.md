@@ -1,26 +1,35 @@
 
 # Getting Started
 
-First check the [prerequisites](./02_prereq.md)
+First check the [prerequisites](./02_prereq.md). Take special attention to the CPU and OS dependencies
 
 ## Setup environment
 
 The first step is setting up the environment:
 
 - A kubernetes cluster (we use [kind](kind) in the exercises)
-- A network environment using [containerlab](containerlab)
+- A network lab environment (we use [containerlab](containerlab) in the exercises)
 
-Create a directory where the exercises will be executed since various tools install files in this directory
+Create a directory where the exercises will be executed. Some tools install files in this directory, so we dont want to mess with your environment.
 
 ```
 mkdir -p kubenet; cd kubenet
 ```
 
-Lets get started with setting up the environment. With the following comamnd
+Lets get started with setting up the environment. With the following command
 
-- a kind kubernetes cluster is created
-- an iprule is create to allow containerlab and the kind cluster to communicate
-- a lab according to the following topology
+- A kind kubernetes cluster is created
+- An iprule is create to allow containerlab and the kind cluster to communicate
+- A lab according to the following topology
+
+/// details | clab topology
+
+```yaml
+--8<--
+https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/lab/3node.yaml
+--8<--
+```
+///
 
 /// tab | interactive
 
@@ -100,7 +109,7 @@ INFO[0017] Adding ssh config for containerlab nodes
 +---+---------------------------+--------------+---------------------------------+---------------+---------+---------------+--------------+
 ```
 
-The following comamnds help to see the running containers. 
+The following commands help to see the running containers. 
 
 - A container for the kind cluster
 - 3 [srlinux][srlinux] containers (2 for the edge and 1 for the core)
@@ -141,15 +150,15 @@ local-path-storage   local-path-provisioner-6bc4bddd6b-tjmt2         1/1     Run
 
 ## Install kubenet components
 
-After the kind cluster is up, install the kubenet components. These are software building blocks we will use to interact with kubernetes and will give you insights how kubernetes can be used for network automation use cases.
+After the [kind][kind] cluster is up and running, proceed to install the Kubenet components. These software building blocks are essential for the exercises and will help you interact with Kubernetes, providing insights into how Kubernetes can be leveraged for network automation use cases.
 
-- [pkgserver][pkgserver]: is a tool that provides 2 way git access to kubernetes: both reading and writing artifacts is enabled using this tool
-- [sdc][sdc]: a tool to interact with YANG devices using the k8s declarative API
-- [kuid][kuid]: an inventory and identity tool, which allows to create resources and claim identifier required for networking (e.g. IPAM, VLAN, AS, etc)
-- [kuidapps][kuid]: application leveraging the kuid backend that create network constructs. Eg, a specific application is installed to interact with Nokia SRLinux to translate the abstracted data-model of kuid to the specific implementation in SRLinux
+- [pkgserver][pkgserver]: A SW component that provides 2 way git access to kubernetes: basically read and write to a repository.
+- [sdc][sdc]: A SW component that maps a kubernetes manifest to a YANG based system.
+- [kuid][kuid]: An inventory and identity system, which allows to create resources and claim identifier required for networking (e.g. IPAM, VLAN, AS, etc). Some people think of this as a source of truth.
+- [kuidapps][kuid]: Application leveraging the kuid backend API and extend kuid with applications that are tailored for specific tasks. E.g, a specific kuid app is installed to interact with Nokia [SRLinux][srlinux] devices to translate the abstracted data-model of kuid to the specific implementation in [SRLinux][srlinux]. Another app is setup to map the [cointerlab][containerlab] topology into the [kuid][kuid] backend.
 
 
-/// tab | interactive
+/// tab | Interactive
 
 kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
 
@@ -159,7 +168,7 @@ kubenetctl install
 
 ///
 
-/// tab | automatic
+/// tab | Automatic
 
 When specifying the automatic option -a, kubenetctl will run the steps automatically without human intervention
 

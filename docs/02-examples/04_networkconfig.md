@@ -1,8 +1,9 @@
 # Network Config
 
-Configuring networking involves managing numerous parameters and fine-tuning various settings. In this exercise, we demonstrate how to define network-wide parameters that network design engineers can use to accommodate diverse workloads. The goal is to abstract the intricate details of network configurations, allowing network engineers, who have a deep understanding of the network design, to utilize these parameters effectively.
+Configuring networking involves managing numerous parameters and fine-tuning various settings. In this exercise, we demonstrate how to define network-wide parameters that network design engineers can use to accommodate diverse environments. The goal is to decouple the network design details from the service configuration. As such the detailed network design parameters are hidden from the people consuming the network. This is a technique to help abstraction.
 
-First we create an IP Index, which is act like a routing table. This IP Index serves as the global network IP range this network is setup with. We configure both IPv4 and IPv6 prefixes
+First, we create an IP Index, which acts like a routing table. This IP Index serves as the global network IP range for the entire setup. We configure both IPv4 and IPv6 prefixes to ensure comprehensive coverage and flexibility in addressing.
+
 
 /// details | IP Index
 
@@ -21,8 +22,11 @@ The 2nd configuration defines various parameters for the network that are specif
 - The usage of a RR for IBGP
 - The selection of EVPN for the overlay routes for L2 and L3
 - Which encapsulation is used for overlays
+- etc
 
-We could extend or leverage other parameters, but the idea here is to show how one could use such a concept
+!!!note "The parameters can be extended/tuned for other environments. The idea here is to show how one could use such a concept"
+
+Below we can see which information we use in this exercise
 
 /// details | Network config
 
@@ -110,8 +114,9 @@ topo3nodesrl.default.aspool   True    topo3nodesrl.default   range       65000-6
 topo3nodesrl.default.ibgp     True    topo3nodesrl.default   staticID    65535         65535
 ```
 
-All these parameters are registered in [kuid][kuid] and can be leveraged as a source of truth that various entities can use to achieve certain tasks and validate certain configurations. All of these resources are available through an API and can be used by machines and humans.
-We are ready to configure underlay and overlay !!!.
+All these parameters are registered through [kuid][kuid] API and can be leveraged as a source of truth that various components leverage for specific use cases. In the next examples you will see how certain networking applications leverage this for configuring the network,
+
+You are ready to configure underlay and overlay !!!.
 
 
 [containerlab]: https://containerlab.dev

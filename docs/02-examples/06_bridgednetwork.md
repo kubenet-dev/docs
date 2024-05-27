@@ -13,7 +13,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/network/vpc1-bridge
 
 Execute the following command to instantiate the bridged network
 
-/// tab | interactive
+/// tab | Interactive
 
 kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
 
@@ -23,7 +23,7 @@ kubenetctl networkbridged
 
 ///
 
-/// tab | automatic
+/// tab | Automatic
 
 When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
 
@@ -43,9 +43,9 @@ Configue a bridged EVPN overlay network
 network.network.app.kuid.dev/topo3nodesrl.vpc1 created
 ```
 
-An abstract data model is derived per device for this confiuration, which is translated to the specific implementation of [srlinux][srlinux] and finally transacted to the device. Important to note that only Edge01 and edge01 has a configuration, since these devices are only used for this specific configuration. The topology information is used to determine this.
+An abstract data model is derived per device for this confiuration, which is translated to the specific implementation of [srlinux][srlinux] and finally transacted to the device. Important to note that only edge01 and edge02 got a new configuration, since these devices are only used for this specific configuration. The topology information is used to determine this.
 
-The abstracted device models
+The abstracted device models can be viewed with this command
 
 ```
 kubectl get networkdevices.network.app.kuid.dev
@@ -60,7 +60,7 @@ topo3nodesrl.vpc1.edge01      True    srlinux.nokia.com
 topo3nodesrl.vpc1.edge02      True    srlinux.nokia.com
 ```
 
-The configuration send to the device.
+The configuration send to the device can be seen through this command.
 
 ```
 kubectl get configs.config.sdcio.dev 
@@ -75,7 +75,7 @@ topo3nodesrl.vpc1.edge01      True    ready    default/edge01   srl.nokia.sdcio.
 topo3nodesrl.vpc1.edge02      True    ready    default/edge02   srl.nokia.sdcio.dev/24.3.2
 ```
 
-So lets check if this final ended up on the devices
+Lets check if this final ended up on the devices.
 
 /// tab | edge01
 
@@ -105,6 +105,13 @@ A:edge02# show network-instance summary
 +------------------------------+----------------+----------------+----------------+------------------------------+--------------------------------------+
 
 --{ + running }--[  ]--
+```
+
+You can also see the resulting configuration using kubectl using the following command.
+
+```
+kubectl get runningconfigs.config.sdcio.dev edge01 -o yaml
+kubectl get runningconfigs.config.sdcio.dev edge02 -o yaml
 ```
 
 Nice !!
