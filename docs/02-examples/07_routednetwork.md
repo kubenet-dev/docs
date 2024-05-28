@@ -45,7 +45,7 @@ network.network.app.kuid.dev/topo3nodesrl.vpc2 created
 
 An abstract data model is derived per device for this confiuration, which is translated to the specific implementation of [srlinux][srlinux] and finally transacted to the device. Important to note that only edge01 and edge02 has a configuration, since these devices are only used for this specific configuration. The topology information is used to determine this.
 
-The abstracted device models can be viewed with this command.
+The abstracted device models per device can be viewed with this command
 
 ```
 kubectl get networkdevices.network.app.kuid.dev
@@ -62,7 +62,16 @@ topo3nodesrl.vpc2.edge01      True    srlinux.nokia.com
 topo3nodesrl.vpc2.edge02      True    srlinux.nokia.com
 ```
 
-The configuration send to the device can be seen through this command.
+!!!Note "through the -o yaml option in `kubectl` you get the detailed view of the config in yaml format; -o json provide the json based output"
+
+
+example command for the abstracted config of the edge01 device
+
+```
+kubectl get networkdevices.network.app.kuid.dev topo3nodesrl.vpc2.edge01 -o yaml
+```
+
+The final device specific [srlinux][srlinux] configuration send to the device can be seen through this command.
 
 ```
 kubectl get configs.config.sdcio.dev 
@@ -79,7 +88,15 @@ topo3nodesrl.vpc2.edge01      True    ready    default/edge01   srl.nokia.sdcio.
 topo3nodesrl.vpc2.edge02      True    ready    default/edge02   srl.nokia.sdcio.dev/24.3.2
 ```
 
-So lets check if this final ended up on the devices
+!!!Note "through the -o yaml option in `kubectl` you get the detailed view of the config in yaml format; -o json provide the json based output"
+
+example command for the detailed [srlinux][srlinux] config of the edge01 device
+
+```
+kubectl get configs.config.sdcio.dev  topo3nodesrl.vpc2.edge01 -o yaml
+```
+
+Let's check if this final ended up on the devices
 
 /// tab | edge01
 
