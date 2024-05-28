@@ -104,7 +104,12 @@ Let's check if this final ended up on the devices
 /// tab | edge01
 
 ```
-A:edge01# show network-instance summary
+docker exec clab-topo3nodesrl-edge01 sr_cli -- show network-instance summary
+```
+
+Expected output
+
+```
 +------------------------------+----------------+----------------+----------------+------------------------------+--------------------------------------+
 |             Name             |      Type      |  Admin state   |   Oper state   |          Router id           |             Description              |
 +==============================+================+================+================+==============================+======================================+
@@ -123,7 +128,12 @@ A:edge01# show network-instance summary
 /// tab | edge02
 
 ```
-A:edge02# show network-instance summary
+docker exec clab-topo3nodesrl-edge02 sr_cli -- show network-instance summary
+```
+
+Expected output
+
+```
 +------------------------------+----------------+----------------+----------------+------------------------------+--------------------------------------+
 |             Name             |      Type      |  Admin state   |   Oper state   |          Router id           |             Description              |
 +==============================+================+================+================+==============================+======================================+
@@ -136,6 +146,8 @@ A:edge02# show network-instance summary
 --{ + running }--[  ]--
 ```
 
+///
+
 You can also see the resulting configuration using kubectl using the following command.
 
 ```
@@ -144,8 +156,6 @@ kubectl get runningconfigs.config.sdcio.dev edge02 -o yaml
 ```
 
 Nice, a single API for both routed and/or bridged !! Lets explore gitops.
-
-///
 
 [containerlab]: https://containerlab.dev
 [kind]: https://kind.sigs.k8s.io

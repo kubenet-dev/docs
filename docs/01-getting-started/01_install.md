@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/lab/3node.yaml
 ```
 ///
 
-/// tab | interactive
+/// tab | Interactive
 
 kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
 
@@ -41,7 +41,7 @@ kubenetctl setup
 
 ///
 
-/// tab | automatic
+/// tab | Automatic
 
 When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
 

@@ -143,7 +143,12 @@ Let's check if this finally ended up on the devices
 /// tab | edge01
 
 ```
-A:edge01# show network-instance summary
+docker exec clab-topo3nodesrl-edge01 sr_cli -- show network-instance summary
+```
+
+Expected output
+
+```
 +------------------------------+----------------+----------------+----------------+------------------------------+--------------------------------------+
 |             Name             |      Type      |  Admin state   |   Oper state   |          Router id           |             Description              |
 +==============================+================+================+================+==============================+======================================+
@@ -153,7 +158,12 @@ A:edge01# show network-instance summary
 ```
 
 ```
-A:edge01# show network-instance default protocols bgp neighbor
+docker exec clab-topo3nodesrl-edge01 sr_cli -- show network-instance default protocols bgp neighbor
+```
+
+Expected output
+
+```
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 BGP neighbor summary for network-instance "default"
 Flags: S static, D dynamic, L discovered by LLDP, B BFD enabled, - disabled, * slow
@@ -188,7 +198,12 @@ Summary:
 /// tab | core01
 
 ```
-A:core01# show network-instance summary
+docker exec clab-topo3nodesrl-core01 sr_cli -- show network-instance summary
+```
+
+Expected output
+
+```
 +------------------------------+----------------+----------------+----------------+------------------------------+--------------------------------------+
 |             Name             |      Type      |  Admin state   |   Oper state   |          Router id           |             Description              |
 +==============================+================+================+================+==============================+======================================+
@@ -198,8 +213,13 @@ A:core01# show network-instance summary
 
 ```
 
+Expected output
+
 ```
-A:core01# show network-instance default protocols bgp neighbor
+docker exec clab-topo3nodesrl-core01 sr_cli -- show network-instance default protocols bgp neighbor
+```
+
+```
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 BGP neighbor summary for network-instance "default"
 Flags: S static, D dynamic, L discovered by LLDP, B BFD enabled, - disabled, * slow
@@ -240,8 +260,9 @@ Flags: S static, D dynamic, L discovered by LLDP, B BFD enabled, - disabled, * s
 Summary:
 6 configured neighbors, 6 configured sessions are established,0 disabled peers
 0 dynamic peers
-
 ```
+
+///
 
 You can also see the resulting configuration using kubectl using the following command.
 
@@ -253,7 +274,6 @@ kubectl get runningconfigs.config.sdcio.dev edge02 -o yaml
 
 Lets see how we can do the same for overlays
 
-///
 
 [containerlab]: https://containerlab.dev
 [kind]: https://kind.sigs.k8s.io
