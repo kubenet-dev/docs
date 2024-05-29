@@ -4,11 +4,11 @@ hide:
 ---
 <p align=center><object type="image/svg+xml" data=https://cdn.jsdelivr.net/gh/kubenet-dev/docs@main/docs/images/kubenet_logo_final.svg width="200p" height="200p" background="white"></object></p>
 
-[![Discord](https://img.shields.io/discord/860500297297821756?style=flat-square&label=discord&logo=discord&color=00c9ff&labelColor=bec8d2)](https://discord.gg/Ed48vZcy)
+[![Discord](https://img.shields.io/discord/860500297297821756?style=flat-square&label=discord&logo=discord&color=00c9ff&labelColor=bec8d2)](https://discord.gg/fH35bmcTU9)
 
 Welcome to `kubenet`, a community based approach to help network engineers better understand the potential of `kubernetes` for network automation. While we discuss networking, we are NOT talking about CNI(s) here, but about using `kubernetes` as an automation/orchestration engine to manage physical, virtual or containerized NOS(s).
 
-If you are interested to learn and discuss [join us](https://discord.gg/Ed48vZcy)
+If you are interested to learn and discuss [join us](https://discord.gg/fH35bmcTU9)
 
 ## Why
 
@@ -29,7 +29,7 @@ Here are some attributes to consider why kubernetes is a good automation platfor
 
 Join us on this journey as we learn how to leverage kubernetes for network automation.
 
-Have questions, ideas, bug reports or just want to chat? Come join [our discord server](https://discord.gg/Ed48vZcy).
+Have questions, ideas, bug reports or just want to chat? Come join [our discord server](https://discord.gg/fH35bmcTU9).
 
 <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js" async></script>
 

@@ -96,9 +96,9 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/sdcio
-    # - icon: fontawesome/brands/discord
-    #   link: https://discord.gg/fHCNahWR2T
+      link: https://github.com/kubenet
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/fH35bmcTU9
     
 extra_css:
   - stylesheets/extra.css

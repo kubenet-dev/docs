@@ -341,6 +341,6 @@ Status:
 Events:  <none>
 ```
 
-Awesome, we hope you enjoyed and thanks for completing these exercises. If you have other ideas, suggestion or want to discuss this further join us [here]((https://discord.gg/Ed48vZcy))
+Awesome, we hope you enjoyed and thanks for completing these exercises. If you have other ideas, suggestion or want to discuss this further join us [here](https://discord.gg/fH35bmcTU9)
 
 [pkgserver-repo]: https://docs.pkgserver.dev/03-userguide/03_register_deployment_repo/
