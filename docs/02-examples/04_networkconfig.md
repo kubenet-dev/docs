@@ -39,26 +39,9 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/network/default-net
 
 Execute the following command
 
-/// tab | interactive
-
-kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
-
 ```
 kubenetctl networkconfig
 ```
-
-///
-
-/// tab | automatic
-
-When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
-
-```
-kubenetctl networkconfig -a
-```
-
-///
-
 
 ```shell
 Configue the default network configuration (config parameters for the underlay)

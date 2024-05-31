@@ -13,26 +13,9 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/network/default-net
 
 Execute the following command to instantiate the default network
 
-/// tab | Interactive
-
-kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
-
 ```
 kubenetctl networkdefault
 ```
-
-///
-
-/// tab | Automatic
-
-When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
-
-```
-kubenetctl networkdefault -a
-```
-
-///
-
 
 ```shell
 Configue the default underlay network

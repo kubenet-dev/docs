@@ -13,26 +13,9 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/network/vpc3-irb-ne
 
 Execute the following command to instantiate the routed network
 
-/// tab | Interactive
-
-kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
-
 ```
 kubenetctl networkirb
 ```
-
-///
-
-/// tab | Automatic
-
-When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
-
-```
-kubenetctl networkirb -a
-```
-
-///
-
 
 ```shell
 Configue a IRB overlay EVPN network

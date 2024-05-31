@@ -31,25 +31,9 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/lab/3node.yaml
 ```
 ///
 
-/// tab | Interactive
-
-kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
-
 ```
 kubenetctl setup
 ```
-
-///
-
-/// tab | Automatic
-
-When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
-
-```
-kubenetctl setup -a
-```
-
-///
 
 A similar output is expected
 
@@ -157,26 +141,9 @@ After the [kind][kind] cluster is up and running, proceed to install the Kubenet
 - [kuid][kuid]: An inventory and identity system, which allows to create resources and claim identifier required for networking (e.g. IPAM, VLAN, AS, etc). Some people think of this as a source of truth.
 - [kuidapps][kuid]: Application leveraging the kuid backend API and extend kuid with applications that are tailored for specific tasks. E.g, a specific kuid app is installed to interact with Nokia [SRLinux][srlinux] devices to translate the abstracted data-model of kuid to the specific implementation in [SRLinux][srlinux]. Another app is setup to map the [cointerlab][containerlab] topology into the [kuid][kuid] backend.
 
-
-/// tab | Interactive
-
-kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
-
 ```
 kubenetctl install
 ```
-
-///
-
-/// tab | Automatic
-
-When specifying the automatic option -a, kubenetctl will run the steps automatically without human intervention
-
-```
-kubenetctl install -a
-```
-
-///
 
 ```shell
 Install kubenet Components

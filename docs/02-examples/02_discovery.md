@@ -46,25 +46,9 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/sdc/drrules/dr-dyna
 
 ///
 
-/// tab | Interactive
-
-kubenetctl has the option to run in interactive mode if you want to follow the steps one by one. If you are prompted with ..., hit ENTER
-
 ```
 kubenetctl sdc
 ```
-
-///
-
-/// tab | Automatic
-
-When specifying the automatic option -a, kubenetctl will run the steps automatically one after the other
-
-```
-kubenetctl sdc -a
-```
-
-///
 
 ```shell
 Configue sdc

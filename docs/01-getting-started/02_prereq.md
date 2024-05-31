@@ -35,8 +35,6 @@ complete -F _start_kubectl k
 
 kubenetctl is a single binary built for linux and Mac OS, distributed via [ghreleases][ghreleases] focussed to help run through the kubenet exercises. 
 
-!!!note "By default it runs in interactive mode, where you need to press enter between all steps. The -a option runs the step automatically while still printing what each step does"
-
 
 !!!note "The --shell option allows to change the shell used to execute the commands, by default it uses bash. If you wan to use another shell use --shell zsh e.g"
 
