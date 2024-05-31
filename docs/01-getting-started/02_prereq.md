@@ -75,11 +75,6 @@ we use kind for the exercises as it is a convenient tool to setup a kubernetes c
 
 Install kind using [kind][kind-install]
 
-In this example we install a [`kind`][kind] cluster with name `sdc`. 
-
-```
-kind create cluster --name sdc
-```
 ///
 
 /// tab | other
