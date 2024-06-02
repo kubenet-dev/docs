@@ -7,8 +7,8 @@ First check the [prerequisites](./02_prereq.md). Take special attention to the C
 
 The first step is setting up the environment:
 
-- A kubernetes cluster (we use [kind](kind) in the exercises)
-- A network lab environment (we use [containerlab](containerlab) in the exercises)
+- A kubernetes cluster (we use [kind][kind] in the exercises)
+- A network lab environment (we use [containerlab][containerlab] in the exercises)
 
 Create a directory where the exercises will be executed. Some tools install files in this directory, so we dont want to mess with your environment.
 
