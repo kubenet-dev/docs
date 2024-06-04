@@ -6,7 +6,7 @@ hide:
 
 [![Discord](https://img.shields.io/discord/860500297297821756?style=flat-square&label=discord&logo=discord&color=00c9ff&labelColor=bec8d2)](https://discord.gg/fH35bmcTU9)
 
-Welcome to `kubenet`, a community based approach to help network engineers better understand the potential of `kubernetes` for network automation. While we discuss networking, we are NOT talking about CNI(s) here, but about using `kubernetes` as an automation/orchestration engine to manage physical, virtual or containerized NOS(s).
+The Kubenet community has been created with the goal to help network engineers understand the potential of kubernetes for network automation. While we discuss networking, we are NOT talking about CNI(s) here, but about using `kubernetes` as an automation/orchestration engine to manage physical, virtual or containerized NOS(s).
 
 If you are interested to learn and discuss [join us](https://discord.gg/fH35bmcTU9)
 
