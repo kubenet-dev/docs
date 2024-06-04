@@ -33,10 +33,10 @@ complete -F _start_kubectl k
 
 ## kubenetctl
 
-kubenetctl is a single binary built for linux and Mac OS, distributed via [ghreleases][ghreleases] focussed to help run through the kubenet exercises. 
+kubenetctl is a single binary built for linux and Mac OS, distributed via [ghreleases][ghreleases] focussed to help run through the kubenet exercises (basically `kubenetctl` tries to avoid fat fingering when executing the exercises).
 
 
-!!!note "The --shell option allows to change the shell used to execute the commands, by default it uses bash. If you wan to use another shell use --shell zsh e.g"
+!!!note "kubenetctl is a binary tool that executes kubenet tasks (exercises) through the OS shell. By default kubenetctl uses the bash shell. if you prefer a different shell, you can alter the shell using the --shell option. E.g. using zsh or other"
 
 /// tab | linux/Mac OS
 
@@ -47,7 +47,6 @@ bash -c "$(curl -sL https://github.com/kubenet-dev/kubenetctl/raw/main/install.s
 ```
 
 As a result, the latest `kubenetctl` version will be installed in the /usr/local/bin directory and the version information will be printed out.
-
 
 To install a specific version of `kubenetctl`, provide the version with -v flag to the installation script:
 
