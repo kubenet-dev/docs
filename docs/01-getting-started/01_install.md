@@ -139,7 +139,7 @@ After the [kind][kind] cluster is up and running, proceed to install the Kubenet
 - [pkgserver][pkgserver]: A SW component that provides 2 way git access to kubernetes: basically read and write to a repository.
 - [sdc][sdc]: A SW component that maps a kubernetes manifest to a YANG based system.
 - [kuid][kuid]: An inventory and identity system, which allows to create resources and claim identifier required for networking (e.g. IPAM, VLAN, AS, etc). Some people think of this as a source of truth.
-- [kuidapps][kuid]: Application leveraging the kuid backend API and extend kuid with applications that are tailored for specific tasks. E.g, a specific kuid app is installed to interact with Nokia [SRLinux][srlinux] devices to translate the abstracted data-model of kuid to the specific implementation in [SRLinux][srlinux]. Another app is setup to map the [cointerlab][containerlab] topology into the [kuid][kuid] backend.
+- [kuidapps][kuid]: Application leveraging the kuid backend API and extend kuid with applications that are tailored for specific tasks. E.g, a specific kuid app is installed to interact with Nokia [SRLinux][srlinux] devices to translate the abstracted data-model of kuid to the specific implementation in [SRLinux][srlinux]. Another app is setup to map the [containerlab][containerlab] topology into the [kuid][kuid] backend.
 
 ```
 kubenetctl install
