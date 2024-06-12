@@ -18,7 +18,7 @@ kubenetctl networkdefault
 ```
 
 ```shell
-Configue the default underlay network
+Configure the default underlay network
 =====================================
 # apply the default network config [1/1]:
 
@@ -26,11 +26,11 @@ Configue the default underlay network
 network.network.app.kuid.dev/topo3nodesrl.default created
 ```
 
-While this looks really simple, a lot is happening under the hood. This default network is leveraging the network config setup in the previous step and allocates AS per device for the underlay, It allocate a IP prefix for each link in the network per address family and a IP address for its individual enpoints, etc. On top a device config is derived thorugh an abstract data model, which is mapped to [srlinux][srlinux] for the specific implementation of the device. Once the device configuration is available for all the devices, the configurations are transacted to the device using [sdc][sdc].
+While this looks really simple, a lot is happening under the hood. This default network is leveraging the network config setup in the previous step and allocates AS per device for the underlay, It allocate a IP prefix for each link in the network per address family and a IP address for its individual endpoints, etc. On top a device config is derived through an abstract data model, which is mapped to [srlinux][srlinux] for the specific implementation of the device. Once the device configuration is available for all the devices, the configurations are transacted to the device using [sdc][sdc].
 
 !!!note "In a later exercise (gitops) you will see that another option is to check in the resulting device configurations in git, rather than transacting to the network".
 
-Lets go through some resources that got allocated through these steps.
+Let's go through some resources that got allocated through these steps.
 
 First an AS number per device is allocated, through the ASClaim API.
 
@@ -92,7 +92,7 @@ topo3nodesrl.default.edge01   True    srlinux.nokia.com
 topo3nodesrl.default.edge02   True    srlinux.nokia.com
 ```
 
-!!!Note "through the -o yaml option in `kubectl` you get the detailed view of the config in yaml format; -o json provide the json based output"
+!!!Note "through the -o yaml option in `kubectl` you get the detailed view of the config in yaml format; -o json provides the json based output"
 
 example command for the abstracted config of the edge01 device
 
@@ -100,7 +100,7 @@ example command for the abstracted config of the edge01 device
 kubectl get networkdevices.network.app.kuid.dev topo3nodesrl.default.edge01 -o yaml
 ```
 
-The final device specific [srlinux][srlinux] configuration send to the device can be seen through this command.
+The final device specific [srlinux][srlinux] configuration sent to the device can be seen through this command.
 
 ```
 kubectl get configs.config.sdcio.dev 
@@ -113,7 +113,7 @@ topo3nodesrl.default.edge01   True    ready    default/edge01   srl.nokia.sdcio.
 topo3nodesrl.default.edge02   True    ready    default/edge02   srl.nokia.sdcio.dev/24.3.2
 ```
 
-!!!Note "through the -o yaml option in `kubectl` you get the detailed view of the config in yaml format; -o json provide the json based output"
+!!!Note "through the -o yaml option in `kubectl` you get the detailed view of the config in yaml format; -o json provides the json based output"
 
 example command for the detailed [srlinux][srlinux] config of the edge01 device
 
@@ -255,7 +255,7 @@ kubectl get runningconfigs.config.sdcio.dev edge01 -o yaml
 kubectl get runningconfigs.config.sdcio.dev edge02 -o yaml
 ```
 
-Lets see how we can do the same for overlays
+Let's see how we can do the same for overlays
 
 
 [containerlab]: https://containerlab.dev
