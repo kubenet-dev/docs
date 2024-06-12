@@ -1,9 +1,9 @@
 # Discovery
 
-This exercise will focus on network device discovery. We will discover the deployed network devices that were deployed using [containerlab][containerlab] in the installation section.
+This exercise will focus on network device discovery. We will discover the network devices that were deployed using [containerlab][containerlab] in the installation section.
 
 
-Given [sdc][sdc] is build to support multiple vendors, the first thing we need to do is load the YANG schema for the respective vendor and release. In this exercise we use [gNMI][gnmi], but netconf could also be used.
+Given [sdc][sdc] is built to support multiple vendors, the first thing we need to do is load the YANG schema for the respective vendor and release. In this exercise we use [gNMI][gnmi], but note that netconf could also be used.
 
 /// details | Schema
 
@@ -14,7 +14,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/sdc/schemas/srl24-3
 ```
 ///
 
-After the schema is configured we create a set of profiles that [sdc][sdc] uses to connect and sync the configurations from the devices. Also the credentials, using secrets are setup for the respectve device.
+After the schema is configured we create a set of profiles that [sdc][sdc] uses to connect and sync the configurations from the devices. Also the credentials, using secrets are setup for the respective device.
 
 /// details | Connection Profile
 
@@ -34,7 +34,7 @@ https://raw.githubusercontent.com/kubenet-dev/kubenet/v0.0.1/sdc/profiles/sync-g
 ```
 ///
 
-Lastly we configure a discovery rule that is used by [sdc][sdc] to discover the devices within the ip range we setup in the setup step.
+Lastly we configure a discovery rule that is used by [sdc][sdc] to discover the devices within the ip range provided in the setup step.
 
 /// details | Discovery rule
 
@@ -51,7 +51,7 @@ kubenetctl sdc
 ```
 
 ```shell
-Configue sdc
+Configure sdc
 ============
 # apply the schema for srlinux 24.3.2 [1/5]:
 
@@ -79,13 +79,13 @@ secret/srl.nokia.sdcio.dev created
 discoveryrule.inv.sdcio.dev/dr-dynamic created
 ```
 
-Lets see if this was successfull.
+Let's see if this was successfull.
 
 ```
  kubectl get targets
 ```
 
-Wow 🎉 we discovered the 3 devices setup with containerlab, with its respective MAC address, IP address, Provider, etc.
+Wow 🎉 we discovered the 3 devices setup with containerlab, with their respective MAC address, IP address, Provider, etc.
 
 ```
 NAME     READY   REASON   PROVIDER              ADDRESS            PLATFORM      SERIALNUMBER     MACADDRESS
@@ -94,7 +94,7 @@ edge01   True             srl.nokia.sdcio.dev   172.21.0.4:57400   7220 IXR-D2  
 edge02   True             srl.nokia.sdcio.dev   172.21.0.5:57400   7220 IXR-D2   Sim Serial No.   1A:1D:04:FF:00:00
 ```
 
-The following command allows to see the running config of the respective devices.
+The following command allows us to see the running config of the respective devices.
 
 ```
 kubectl get runningconfigs.config.sdcio.dev core01 -o yaml
