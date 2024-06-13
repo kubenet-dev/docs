@@ -80,10 +80,10 @@ theme:
     text: Manrope
     code: Fira Mono
   icon:
-    logo: fontawesome/solid/sitemap
+    logo: kubenet_logo_only_final
     repo: fontawesome/brands/github
     edit: material/file-edit-outline
-  favicon: images/flask.svg
+  favicon: docs/images/kubenet_logo_only_final.svg
 
 # Plugins
 plugins:
