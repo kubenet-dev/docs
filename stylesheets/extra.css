@@ -124,3 +124,14 @@
   .md-typeset .embed-result {
     margin-top: -1.125em;
   }
+
+  .md-header__button.md-logo img, .md-header__button.md-logo svg {
+    height: 2rem;
+    width: auto;
+  }
+
+  .md-typeset .emojione, .md-typeset .gemoji, .md-typeset .twemoji svg {
+    height: 1.7em;
+    max-height: 2em;
+    width: auto;
+  }
