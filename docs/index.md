@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-<p align=center><object type="image/svg+xml" data=https://cdn.jsdelivr.net/gh/kubenet-dev/docs@main/docs/images/kubenet_logo_final.svg width="200p" height="200p" background="white"></object></p>
+![Kubenet logo](assets/logos/Kubenet-logo-transparent-withname-100x123.png)
 
 [![Discord](https://img.shields.io/discord/860500297297821756?style=flat-square&label=discord&logo=discord&color=00c9ff&labelColor=bec8d2)](https://discord.gg/fH35bmcTU9)
 
