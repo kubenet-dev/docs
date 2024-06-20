@@ -6,7 +6,7 @@ env:
   MKDOCS_MATERIAL_VER: 9.1.4
 
 jobs:
-  publish:
+  build-docs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
