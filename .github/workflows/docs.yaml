@@ -3,9 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "docs-*"
-    tags:
-      - "v*"
+      - "main"
 
 env:
   MKDOCS_MATERIAL_VER: 9.1.4
