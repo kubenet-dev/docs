@@ -31,6 +31,9 @@ jobs:
       - name: Store html build result
         uses: actions/upload-artifact@v3
         with:
-            name: learn.kubenet.dev.${{ github.sha }}..zip
+            name: learn.kubenet.dev.${{ github.sha }}.zip
             path: |
               build
+      - name: Set summary
+        run: |
+            echo "### Documentation built and can be downloaded from the job summary page. :rocket:"  >> $GITHUB_STEP_SUMMARY
