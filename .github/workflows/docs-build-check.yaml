@@ -1,0 +1,39 @@
+name: "Pull Request Docs Build Check"
+on:
+    pull_request:
+
+env:
+  MKDOCS_MATERIAL_VER: 9.1.4
+
+jobs:
+  publish:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          docker build -t my-mkdocs-image \
+            -f Dockerfile .
+        env:
+          DOCKER_BUILDKIT: 1
+
+      - name: Build MkDocs Site
+        run: |
+          docker run -v $(pwd):/docs my-mkdocs-image build --strict -c -f mkdocs.yml -d build
+      - name: Store html build result
+        uses: actions/upload-artifact@v4
+        with:
+            name: learn.kubenet.dev.${{ github.sha }}.zip
+            path: |
+              build
+      - name: Set summary
+        run: |
+            echo "### Documentation built and can be downloaded from the job summary page. :rocket:"  >> $GITHUB_STEP_SUMMARY
