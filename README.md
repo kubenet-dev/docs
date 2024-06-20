@@ -1,4 +1,4 @@
-![Kubenet logo](assets/logos/Kubenet-logo-transparent-withname-100x123.png)
+![Kubenet logo](https://learn.kubenet.dev/assets/logos/Kubenet-logo-transparent-withname-100x123.png)
 
 [![Discord](https://img.shields.io/discord/860500297297821756?style=flat-square&label=discord&logo=discord&color=00c9ff&labelColor=bec8d2)](https://discord.gg/fH35bmcTU9)
 
