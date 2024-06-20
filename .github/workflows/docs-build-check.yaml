@@ -25,6 +25,12 @@ jobs:
         env:
           DOCKER_BUILDKIT: 1
 
-      - name: Deploy MkDocs Site
+      - name: Build MkDocs Site
         run: |
-          docker run -v $(pwd):/docs my-mkdocs-image build --force --strict
+          docker run -v $(pwd):/docs my-mkdocs-image build --strict -c -f mkdocs.yml -d build
+      - name: Store html build result
+        uses: actions/upload-artifact@v3
+        with:
+            name: learn.kubenet.dev.${{ github.sha }}..zip
+            path: |
+              build
