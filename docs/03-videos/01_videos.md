@@ -10,7 +10,7 @@ presentations and meeting recordings of Kubenet.
 * [Kubenet: From Abstract network definition to device specific config](https://www.youtube.com/watch?v=PIFCdoTJdZg)
 * [Kubenet architecture](https://www.youtube.com/watch?v=_a01lxAX1pQ)
 * [TGIKN: Kubernetes KRM and API](https://www.youtube.com/watch?v=8xrQG6Zzzxo), [slides](https://docs.google.com/presentation/d/1Zk5tGQ6DFu2D_rAs3XcKNnHuIRyaIxosjHFsw9zT-MQ/edit?usp=sharing)
-* TGIKN: Create Tour Own K8s API, [slides](https://docs.google.com/presentation/d/1kqXToBXkG2R4zf8sP5dpPt0QuJm7WrWhmbME7sJgtSo/edit#slide=id.p)
+* [TGIKN: Create Tour Own K8s API](https://youtu.be/tXg7Rq0u-es?si=ghL_Hg8xZ3q77PUH), [slides](https://docs.google.com/presentation/d/1kqXToBXkG2R4zf8sP5dpPt0QuJm7WrWhmbME7sJgtSo/edit#slide=id.p)
 
 ## Presentations
 
