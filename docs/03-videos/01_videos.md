@@ -14,6 +14,10 @@ presentations and meeting recordings of Kubenet.
 
 ## Presentations
 
+### Kubenet
+
+* [Autocon1 - Introduction of Kubenet by Wim on stage and interview by Packet Pushers](https://www.youtube.com/watch?v=L97fg1kYXTs)
+
 ### SDCIO
 
 * [ONE Summit 2024 - Cloud Native YANG Mgmt - Wim Henderickx, Nokia](https://www.youtube.com/watch?v=dHOeqbqkN1s)
