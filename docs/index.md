@@ -25,6 +25,24 @@ Here are some attributes to consider why kubernetes is a good automation platfor
 - Extensive Knowledge Base: The widespread adoption of Kubernetes means there is a vast knowledge base and a large community of experts. This allows organizations to leverage existing expertise to extend and optimize their automation systems.
 
 
+## Use cases
+
+Independent on physical, virtual or containerized networking systems
+
+Use cases:
+- Datacenter networking
+- WAN networking
+- Peering
+- Access/Campus networking
+- Core networking
+- Backhaul/Fronthaul
+- Cloud Networking
+
+Scenario's: 
+- day-0, day-1, day-2 operations
+- lifecycle management
+- config management
+
 ## Join us
 
 Join us on this journey as we learn how to leverage kubernetes for network automation.
