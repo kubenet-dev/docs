@@ -32,6 +32,7 @@ Here are some attributes to consider why kubernetes is a good automation platfor
 Independent on physical, virtual or containerized networking systems
 
 Use cases:
+
 - Datacenter networking
 - WAN networking
 - Peering
@@ -41,6 +42,7 @@ Use cases:
 - Cloud Networking
 
 Scenario's: 
+
 - day-0, day-1, day-2 operations
 - lifecycle management
 - config management
