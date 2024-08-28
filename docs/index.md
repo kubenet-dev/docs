@@ -10,6 +10,11 @@ The Kubenet community has been created with the goal to help network engineers u
 
 If you are interested to learn and discuss [join us](https://discord.gg/fH35bmcTU9)
 
+## Meet us in person
+
+We have a workshop about Kubenet on Tuesday, 19 November from 9 AM on [AutoCon 2](https://networkautomation.forum/autocon2)
+in Denver. See you there!
+
 ## Why
 
 Kubernetes stands out as the most extensive and robust automation and orchestration system available today. Originally focussed on container orchestration but leveraged across many industries, beyond container orchestration. The question to ask here is why is the networking industry not leveraging kubernetes for network automation. The Kubenet community is setup with to goal to help understand networking engineers the potential of kubernetes for network automation.
