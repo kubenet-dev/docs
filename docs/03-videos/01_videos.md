@@ -1,5 +1,10 @@
 # Videos, presentations and articles
 
+## Upcoming sessions
+
+* [AutoCon 2: Workshop C2 - Kubenet: Mastering Kubernetes for Network Automation](https://networkautomation.forum/autocon2) -
+  Wim Henderickx & Mauricio J. Rojas Pino, Nokia
+
 ## Kubenet YouTube channel
 
 The Kubenet [YouTube channel](https://www.youtube.com/@kubenet-wq9nt) contains topical
