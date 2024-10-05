@@ -18,6 +18,8 @@ presentations and meeting recordings of Kubenet.
 * [TGIKN: Create Tour Own K8s API](https://youtu.be/tXg7Rq0u-es?si=ghL_Hg8xZ3q77PUH), [slides](https://docs.google.com/presentation/d/1kqXToBXkG2R4zf8sP5dpPt0QuJm7WrWhmbME7sJgtSo/edit#slide=id.p)
 * [TGIKN: Kubenet Demystify the k8s APIServer part1](https://www.youtube.com/watch?v=M6wXbAs055U), [slides](https://docs.google.com/presentation/d/1n4kHaYS0FTcBNUeE3k5wKypUNoRw-kUrIrGsGfvQAAs/edit#slide=id.p)
 * [TGIKN: Kubenet Demystify the k8s APIServer part2](https://www.youtube.com/watch?v=D0vNfyy3g48), [slides](https://docs.google.com/presentation/d/1jvRK_LJbQfYeOScNG-LxY-JMIzF9MhlORJ9UhNUm744/edit?usp=sharing)
+* [TGIKN: Kubenet TGIKN practically building your own controller with python](https://www.youtube.com/watch?v=QTwhZ2jXmGk)
+* [TGIKN: TGIKN Choreo](https://www.youtube.com/watch?v=J8b3kNxItos), [slides](https://docs.google.com/presentation/d/1QqEGb0lIaHaXM1EeGtKpDBuEmpFtH-MayLasMkUU2iA/edit?usp=sharing)
 
 ## Presentations
 
