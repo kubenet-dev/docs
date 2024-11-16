@@ -50,6 +50,36 @@ Scenario's:
 - lifecycle management
 - config management
 
+## Kubenet components
+
+Kubenet uses a set of open source components to implement the target use cases. These components are listed in the next
+subchapters. 
+
+### [KUID](https://kuidio.github.io/docs/)
+
+![KUID logo](https://kuidio.github.io/docs/assets/logos/KUID-logo-100x123.png)
+
+An inventory and identity system, which allows to create resources and claim identifier required for networking (e.g. IPAM, VLAN, AS, etc). Some people think of this as a source of truth.
+
+### [SDCIO](https://docs.sdcio.dev/)
+
+![SDCIO logo](https://docs.sdcio.dev/assets/logos/SDC-transparent-noname-100x100.png)
+
+A SW component that maps a kubernetes manifest to a YANG based system.
+
+### [KForm](https://docs.kform.dev/)
+
+![KForm logo](https://docs.kform.dev/assets/logos/Kform-transparent-withname-100x123.png)
+
+ A framework that brings the power of 'KRM as code or data' to Kubernetes. With Kform, orchestrating KRM resources becomes a easy through intuitive and human-readable configuration files. These files are not only reusable and shareable but can also be version-controlled, ensuring seamless collaboration among team members.
+
+### [pkgserver](https://docs.pkgserver.dev/)
+
+![pkgserver logo](https://docs.pkgserver.dev/assets/logos/Pkgserver-logo-100x123.png)
+
+A SW component that provides 2 way git access to kubernetes: basically read and write to a repository.
+
+
 ## Join us
 
 Join us on this journey as we learn how to leverage kubernetes for network automation.
