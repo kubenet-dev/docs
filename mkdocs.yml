@@ -22,8 +22,8 @@ site_author: Wim Henderickx
 site_description: >-
   Kubenet is a community initiative to help network automation engineers understand kubernetes
 # repository
-repo_name: kubenet-dev/docs
-repo_url: https://github.com/kubenet-dev/docs
+repo_name: kubenet-dev/kubenet
+repo_url: https://github.com/kubenet-dev/kubenet
 site_url: "https://learn.kubenet.dev"
 theme:
   name: material
@@ -97,7 +97,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/kubenet
+      link: https://github.com/kubenet-dev
     - icon: fontawesome/brands/discord
       link: https://discord.gg/fH35bmcTU9
     
