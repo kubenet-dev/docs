@@ -23,6 +23,9 @@ presentations and meeting recordings of Kubenet.
 
 ## Presentations
 
+### Kubenet
+
+* [N92 2024 - Revolutionizing Network Automation with Kubenet: Beyond Containers - Wim Henderickx, Nokia](https://www.youtube.com/watch?v=qQTwDs933R0)
 ### SDCIO
 
 * [ONE Summit 2024 - Cloud Native YANG Mgmt - Wim Henderickx, Nokia](https://www.youtube.com/watch?v=dHOeqbqkN1s)
