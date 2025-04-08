@@ -27,6 +27,7 @@ presentations and meeting recordings of Kubenet.
 ### Kubenet
 
 * [Cloud Native Telco Day EU 2025 - Kubenet: Harnessing Kubernetes for Network Automation - Wim Henderickx & Ashan Senevirathne](https://www.youtube.com/watch?v=QipW3oOQNqw&list=PLj6h78yzYM2NGdnUvsyUPUZZ2Pm9Cn7FO&index=1)
+* [Autocon1 - Introduction of Kubenet by Wim on stage and interview by Packet Pushers](https://www.youtube.com/watch?v=L97fg1kYXTs)
 
 ### SDCIO
 
