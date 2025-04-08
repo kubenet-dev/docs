@@ -17,12 +17,16 @@ presentations and meeting recordings of Kubenet.
 * [TGIKN: Choreo](https://www.youtube.com/watch?v=J8b3kNxItos), [slides](https://docs.google.com/presentation/d/1QqEGb0lIaHaXM1EeGtKpDBuEmpFtH-MayLasMkUU2iA/edit?usp=sharing)
 * [TGIKN: Choreo autcon2 workshop part3](https://www.youtube.com/watch?v=Af3NNPsGTG0), [slides](https://docs.google.com/presentation/d/11TZL3O58s2ZTj2kqsqdm6dpiHuHpKqYUABQaD0gpkkM/edit#slide=id.g31e3b64b718_0_0)
 * [TGIKN: build your own automation with choreo](https://www.youtube.com/watch?v=Q1wBe7zINzA), [slides from slide 18](https://docs.google.com/presentation/d/11TZL3O58s2ZTj2kqsqdm6dpiHuHpKqYUABQaD0gpkkM/edit#slide=id.g320a34f456e_0_0)
+* [TGIKN: SDC overview](https://www.youtube.com/watch?v=Wj0mgIoJVgQ), [slides](https://docs.google.com/presentation/d/1pefnFpPxZpbzsAqM3kBY2lMNWv6-or0zSn5t7HR2ymA/edit?usp=sharing)
+* [TGIKN SDC deep dive: K8s YANG](https://www.youtube.com/watch?v=UBOxsKfiCBs), [slides](https://docs.google.com/presentation/d/1XhHJkST8AjkkerKi-JPtjBD9iU0Yjn1lz26jve9riVA/edit?usp=sharing)
+* [TGIKN SDC enhancements](https://www.youtube.com/watch?v=S-fmb4_MWak), [slides](https://docs.google.com/presentation/d/1fCNP0_472eEjC9Bs_0fm58TiD0XpDuqDKGvsl75ZGT4/edit?slide=id.g31bb407839a_0_71#slide=id.g31bb407839a_0_71)
 
 
 ## Presentations
 
 ### Kubenet
 
+* [Cloud Native Telco Day EU 2025 - Kubenet: Harnessing Kubernetes for Network Automation - Wim Henderickx & Ashan Senevirathne](https://www.youtube.com/watch?v=QipW3oOQNqw&list=PLj6h78yzYM2NGdnUvsyUPUZZ2Pm9Cn7FO&index=1)
 * [Autocon1 - Introduction of Kubenet by Wim on stage and interview by Packet Pushers](https://www.youtube.com/watch?v=L97fg1kYXTs)
 
 ### SDCIO
@@ -30,6 +34,7 @@ presentations and meeting recordings of Kubenet.
 * [ONE Summit 2024 - Cloud Native YANG Mgmt - Wim Henderickx, Nokia](https://www.youtube.com/watch?v=dHOeqbqkN1s)
 * [KubeCon EU 2024 - How We Are Moving from GitOps to Kubernetes Resource Model in 5G Core - Joel Studler & Ashan Senevirathne, Swisscom](https://youtu.be/crmTnB6Zwt8),
   [slides](https://static.sched.com/hosted_files/kccnceu2024/ee/From%20GitOps%20to%20KRM%20in%20Swisscoms%205G%20Core%20KubeCon%202024-03-20.pdf)
+
 
 ## Articles
 
