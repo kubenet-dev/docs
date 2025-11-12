@@ -34,6 +34,7 @@ presentations and meeting recordings of Kubenet.
 * [ONE Summit 2024 - Cloud Native YANG Mgmt - Wim Henderickx, Nokia](https://www.youtube.com/watch?v=dHOeqbqkN1s)
 * [KubeCon EU 2024 - How We Are Moving from GitOps to Kubernetes Resource Model in 5G Core - Joel Studler & Ashan Senevirathne, Swisscom](https://youtu.be/crmTnB6Zwt8),
   [slides](https://static.sched.com/hosted_files/kccnceu2024/ee/From%20GitOps%20to%20KRM%20in%20Swisscoms%205G%20Core%20KubeCon%202024-03-20.pdf)
+* [ContainerDays 2025 - The Cloud-Native Advantage: Intent-based Network Automation - Alexander North, Swisscom & Markus Vahlenkamp, Nokia](https://youtu.be/P7cCeGBq3aQ)
 
 
 ## Articles
